@@ -1,0 +1,77 @@
+query Pdp($slug: String!, $stage: Stage! = PUBLISHED) {
+  pdp(where: { slug: $slug }, stage: $stage) {
+    id
+    __typename
+    slug
+    title
+    description
+    ogImage {
+      url
+    }
+    components {
+      ... on Tutorial {
+        __typename
+        id
+        title
+        image {
+          url
+        }
+        items {
+          __typename
+          text
+        }
+      }
+      ... on Routine {
+        __typename
+        id
+        chapeau
+        cta
+        description
+        image {
+          url
+        }
+        title
+        url
+      }
+      ... on ProductList {
+        __typename
+        title
+      }
+    }
+    commercetoolsProduct {
+      id
+      masterData {
+        current {
+          slug(locale: "en-GB")
+          metaTitle(locale: "en-GB")
+          metaDescription(locale: "en-GB")
+          name(locale: "en-GB")
+          description(locale: "en-GB")
+          categories {
+            name(locale: "en-GB")
+          }
+          allVariants {
+            id
+            attributesRaw {
+              name
+              value
+            }
+            images {
+              url
+              label
+            }
+            price(currency: "EUR") {
+              value {
+                type
+                currencyCode
+                centAmount
+                fractionDigits
+              }
+            }
+            sku
+          }
+        }
+      }
+    }
+  }
+}

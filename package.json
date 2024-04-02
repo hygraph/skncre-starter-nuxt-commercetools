@@ -1,0 +1,24 @@
+{
+  "name": "skncre-cosmetics-hygraph",
+  "private": false,
+  "type": "module",
+  "version": "1.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/google-fonts": "^3.1.3",
+    "@nuxtjs/tailwindcss": "^6.10.4",
+    "nuxt": "^3.9.1"
+  },
+  "dependencies": {
+    "@nuxt/image": "^1.2.0",
+    "nuxt-graphql-client": "0.2.31"
+  }
+}
